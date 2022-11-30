@@ -1,0 +1,138 @@
+/* Custom properties */
+:root {
+  --body-bg-color-desktop: #efefef;
+  --body-bg-color-mobile: #ffffff;
+  --header-bg-color-mobile: #333333;
+  --header-bg-color-desktop: #ffffff;
+  --header-border-color: #bfbfbf;
+  --button-bg-color: #72c3dc;
+  --buttton-box-shadow-color: #2b8fad;
+  --generic-black: #000000;
+  --generic-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--body-bg-color-mobile);
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  background: var(--header-bg-color-mobile);
+  color: var(--generic-white);
+  text-align: center;
+  font-size: 1.25em;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  background: var(--button-bg-color);
+  color: var(--generic-white);
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 1px 0px var(--buttton-box-shadow-color);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:first-of-type {
+  margin-right: 10px;
+}
+
+.button__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.card__grid {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--generic-black);
+  background: var(--body-bg-color-desktop);
+  margin-bottom: 5px;
+  height: 50px;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+}
+
+/* Desktop Media Queries */
+@media only screen and (min-width: 960px) {
+  body {
+    background: var(--body-bg-color-desktop);
+  }
+
+  header {
+    background: var(--header-bg-color-desktop);
+    color: var(--generic-black);
+    border-bottom: 4px solid var(--header-border-color);
+  }
+
+  main {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  button {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+  button:first-of-type {
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  .button__wrapper {
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  .card {
+    height: 200px;
+    margin-bottom: 0;
+    color: var(--generic-white);
+    font-size: 6em;
+  }
+
+  .card__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer {
+    margin-top: 1em;
+  }
+}
